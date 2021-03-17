@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starbucks Locator</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src="./js/store-data.js"></script>
+  </head>
+  <body>
+    <audio id="mySound">
+      <source  src="./media/switch_sound4.mp3" type="audio/mp3">
+    </audio>
+    <audio id="boomSound">
+      <source  src="./media/choosing_sound.mp3" type="audio/mp3">
+    </audio>
+    <div class="title">Starbucks Locator <img id="cute-coffee-icon" src="https://image.flaticon.com/icons/svg/808/808866.svg" alt="cute coffee"></div>
+    <div class="search-container">
+      <div class="search">
+        <input id="zip-code-input" type="text" placeholder="Enter Zip" />
+        <i class="fas fa-search" onclick="searchStores()"></i>
+      </div>
+    </div>
+    <div class="stores-list-container" id="style-1" >
+      <div " class="stores-list" onmouseover="playSound('mySound')" onmouseleave="stopSound('mySound')" onclick="playSound('boomSound')" onmouseout="stopSound('boomSound')">
+        <div class="store-container" >
+          <!--Store infos are located in this division-->
+          <div class="store-info-container" >
+            <div class="store-address">
+              <address>788 S Grand Ave, Los Angeles,</address>
+              <address>CA 90017, USA</address>
+            </div>
+            <div class="store-phone-number">
+              <p>
+                <i  class="fas fa-phone-volume">&ThickSpace;</i>Phone: +1
+                213-873-4745
+              </p>
+            </div>
+          </div>
+          <!--Number of each info like 1,2,3...-->
+          <div class="store-number-container">
+            <div class="store-number">1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
+    <script src="js/index.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfqKixdR0rpiYiZlFGdnIuJUjmznyvCp0&callback=initMap"
+      async
+      defer
+    ></script>
+    <!--Api'ı unutma !!!-->
+    <!-- hala geçici api key kullanıyoruz! -->
+  </body>
+</html>
